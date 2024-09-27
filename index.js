@@ -18,25 +18,33 @@ const style = new PIXI.TextStyle({
 
 const loaderScene = new PIXI.Container();
 
-      // Create the sprite and add it to the stage
-      await PIXI.Assets.load('resources/loader.png');
+// Create the sprites and add to the stage
+await PIXI.Assets.load('resources/loaderCloud.png');
+let spriteBG = PIXI.Sprite.from('resources/loaderCloud.png');
+loaderScene.addChild(spriteBG);
+spriteBG.anchor.x = 0.5;
+spriteBG.anchor.y = 0.5;
+spriteBG.x = app.screen.width / 2;
+spriteBG.y = app.screen.height / 2;
+
+await PIXI.Assets.load('resources/loader.png');
       let sprite = PIXI.Sprite.from('resources/loader.png');
       loaderScene.addChild(sprite);
-	  // TODO: change anchor point
-	  sprite.x = 160;
-	  sprite.y = 100;
-
-      // Add a ticker callback to move the sprite back and forth
+	  sprite.anchor.x = 0.5;
+	  sprite.anchor.y = 0.5;
+	  sprite.x = app.screen.width / 2;
+	  sprite.y = app.screen.height / 2;
+// Add a ticker callback to move the sprite back and forth
       let elapsed = 0.0;
       app.ticker.add((ticker) => {
         elapsed += ticker.deltaTime;
 		sprite.width += Math.cos(elapsed/25.0);
 		sprite.height += Math.cos(elapsed/25.0);
-      });
+});
 
 const startGameText = new PIXI.Text('Start Game', style);
 startGameText.x = app.view.width / 2 - startGameText.width / 2;
-startGameText.y = app.view.height / 2 - startGameText.height / 2;
+startGameText.y = app.view.height / 2 - startGameText.height / 2 + 150;
 startGameText.eventMode = "static";
 startGameText.cursor = "pointer";
 
@@ -52,10 +60,8 @@ app.stage.addChild(loaderScene);
 
 const mainScene = new PIXI.Container();
 
-/*
-	await PIXI.Assets.load('resources/Loader_HTML5Canvas.svg');
-	const spriteSvg = PIXI.Assets.load({
-        src: 'resources/Loader_HTML5Canvas.svg',
+const spriteSvg = await PIXI.Assets.load({
+        src: 'resources/Loader_HTML5 Canvas.svg',
         data: {
             parseAsGraphicsContext: true,
         },
@@ -68,8 +74,8 @@ const mainScene = new PIXI.Container();
     graphics.pivot.set((bounds.x + bounds.width) / 2, (bounds.y + bounds.height) / 2);
     graphics.position.set(app.screen.width / 2, app.screen.height / 2);
 
-    mainScene.addChild(graphics);
-*/
+mainScene.addChild(graphics);
+
 
 // Create a basic button shape using PIXI Graphics
 const button = new PIXI.Graphics();
