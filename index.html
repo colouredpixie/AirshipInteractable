@@ -50,17 +50,17 @@
     </script>
 
 </head>
-<body onload="init();" style="margin:0px;">
-    <script type="module" src="index.js"></script>
-    <script src="assets.js"></script>
-    <!-- -->
+<body style="margin:0px;">
     
-    <div id="animation_container" style="position: absolute;  left: 0px; top: 1000px; ">
-		<canvas id="canvas" width="640" height="480" style="position: absolute;  left: 0px; top: 0px; display: block; background-color:rgb(110, 99, 99);"></canvas>
-		<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:640px; height:480px; position: absolute; left: 0px; top: 0px; display: block;">
+    <div id="animation_container" style="pointer-events:none; position: absolute;  left: 0px; top: 0px;">
+		<canvas id="canvas" width="640" height="480" style="position: absolute;  left: 0px; top: 0px; display: inline; "></canvas>
+		<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:640px; height:480px; position: absolute; left: 0px; top: 0px; display: inline;">
 		</div>
 	</div>
     
+    <script type="module" src="index.js"></script>
+    <script src="assets.js"></script>
+    <!-- -->
 </body>
 </html>
 
