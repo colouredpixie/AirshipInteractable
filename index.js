@@ -42,9 +42,18 @@ await PIXI.Assets.load('resources/loader.png');
 		sprite.height += Math.cos(elapsed/25.0);
 });
 
-const startGameText = new PIXI.Text('Start Game', style);
-startGameText.x = app.view.width / 2 - startGameText.width / 2;
-startGameText.y = app.view.height / 2 - startGameText.height / 2 + 150;
+
+const startGameButton = new PIXI.Graphics();
+startGameButton.beginFill(0xFF00FF);
+startGameButton.drawRoundedRect(0, 0, 200, 50, 15);
+startGameButton.endFill();
+startGameButton.x = app.view.width / 2 - startGameButton.width / 2;
+startGameButton.y = app.view.height / 2 - startGameButton.height / 2 + 170;
+loaderScene.addChild(startGameButton);
+
+const startGameText = new PIXI.Text('Start Demo', style);
+startGameText.x = startGameButton.x + startGameButton.width / 2 - startGameText.width / 2;  // Center the text on the button
+startGameText.y = startGameButton.y + startGameButton.height / 2 - startGameText.height / 2;
 startGameText.eventMode = "static";
 startGameText.cursor = "pointer";
 
@@ -83,7 +92,7 @@ button.beginFill(0xDE3249);  // Fill color for the button
 button.drawRoundedRect(0, 0, 150, 60, 15);  // Draw rectangle (x, y, width, height, radius)
 button.endFill();
 button.x = (app.screen.width - button.width) / 2;  // Position the button in the center
-button.y = (app.screen.height - button.height) / 2 + 150;
+button.y = (app.screen.height - button.height) / 2 - 150;
 button.cursor = "pointer";
 
 // Create a text label for the button
@@ -112,6 +121,8 @@ function onButtonClick() {
     // You can also perform other actions, like changing the text or triggering other functions
     buttonText.text = 'Clicked!';
 	buttonText.x = button.x + button.width / 2 - buttonText.width / 2;
+
+	alert("I am an alert box!");
 }
 
 (function (cjs, an) {
