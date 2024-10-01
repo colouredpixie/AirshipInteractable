@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <head>
     <link rel="icon" href="favicon.png">
     <title>Airships!</title>
@@ -20,6 +21,7 @@
         loader.addEventListener("complete", function(evt){handleComplete(evt,comp)});
         var lib=comp.getLibrary();
         loader.loadManifest(lib.properties.manifest);
+        anim_container.style.pointerEvents = "auto";
     }
     function handleFileLoad(evt, comp) {
         var images=comp.getImages();	

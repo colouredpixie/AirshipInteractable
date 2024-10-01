@@ -84,11 +84,18 @@ if (reversed == null) { reversed = false; }
 	cjs.MovieClip.apply(this,[props]);
 
 	// Button01
-	this.shape = new cjs.Shape();
-	this.shape.graphics.f("#FFCC00").s().p("Emj/BsAMAAAjX/MNH/AAAMAAADX/g");
-	this.shape.setTransform(74.9781,25,0.0279,0.0362);
+	this.text = new cjs.Text("rotate", "bold 14px 'Verdana'", "#FFFFFF");
+	this.text.textAlign = "center";
+	this.text.lineHeight = 19;
+	this.text.lineWidth = 144;
+	this.text.parent = this;
+	this.text.setTransform(75,14.05);
 
-	this.timeline.addTween(cjs.Tween.get(this.shape).wait(24));
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f("#FFCC00").s().p("ArtD6IAAnzIXbAAIAAHzg");
+	this.shape.setTransform(74.975,25);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape},{t:this.text}]}).wait(24));
 
 	this._renderFirstFrame();
 
@@ -108,11 +115,18 @@ if (reversed == null) { reversed = false; }
 	cjs.MovieClip.apply(this,[props]);
 
 	// Button01
-	this.shape = new cjs.Shape();
-	this.shape.graphics.f("#CC9933").s().p("Emj/BsAMAAAjX/MNH/AAAMAAADX/g");
-	this.shape.setTransform(74.9781,25,0.0279,0.0362);
+	this.text = new cjs.Text("double click!", "bold 14px 'Verdana'", "#FFFFFF");
+	this.text.textAlign = "center";
+	this.text.lineHeight = 19;
+	this.text.lineWidth = 144;
+	this.text.parent = this;
+	this.text.setTransform(75,15);
 
-	this.timeline.addTween(cjs.Tween.get(this.shape).wait(24));
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f("#CC9933").s().p("ArtD6IAAnzIXbAAIAAHzg");
+	this.shape.setTransform(74.975,25);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape},{t:this.text}]}).wait(24));
 
 	this._renderFirstFrame();
 
@@ -185,7 +199,7 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"resources/images/mainCanvas_atlas_1.png?1727795150555", id:"mainCanvas_atlas_1"}
+		{src:"resources/images/mainCanvas_atlas_1.png", id:"mainCanvas_atlas_1"}
 	],
 	preloads: []
 };
