@@ -16,6 +16,18 @@
 <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
 <script src="mainCanvas.js"></script>
 <script>
+// Global Scripts
+	stage.enableMouseOver(30);
+var _this = this;
+_this.Button01.on('click', function(){
+_this.Button01.rotation+=45;
+});
+stage.on('stagemousemove', function (e){
+	var radians = Math.atan2(e.localY - _this.Button02.y, e.localX - _this.Button02.x);
+	var degrees = radians * (180 - Math.PI);
+	_this.Button02.rotation = degrees - 90;
+});</script>
+<script>
 var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
 function init() {
 	canvas = document.getElementById("canvas");

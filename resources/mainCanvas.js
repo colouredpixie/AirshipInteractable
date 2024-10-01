@@ -27,7 +27,7 @@ lib.ssMetadata = [
 
 
 
-(lib.loader = function() {
+(lib.loaderShip = function() {
 	this.initialize(ss["mainCanvas_atlas_1"]);
 	this.gotoAndStop(0);
 }).prototype = p = new cjs.Sprite();
@@ -50,7 +50,7 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 	}
 
 
-(lib.Symbol1 = function(mode,startPosition,loop,reversed) {
+(lib.loaderShip_1 = function(mode,startPosition,loop,reversed) {
 if (loop == null) { loop = true; }
 if (reversed == null) { reversed = false; }
 	var props = new Object();
@@ -61,15 +61,63 @@ if (reversed == null) { reversed = false; }
 	props.reversed = reversed;
 	cjs.MovieClip.apply(this,[props]);
 
-	// ShipRoaming
-	this.instance = new lib.loader();
+	// Layer_1
+	this.instance = new lib.loaderShip();
 	this.instance.setTransform(-50,-23,0.8,0.8);
 
 	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
 
 	this._renderFirstFrame();
 
-}).prototype = getMCSymbolPrototype(lib.Symbol1, new cjs.Rectangle(-50,-23,200,200), null);
+}).prototype = getMCSymbolPrototype(lib.loaderShip_1, new cjs.Rectangle(-50,-23,200,200), null);
+
+
+(lib.Button02 = function(mode,startPosition,loop,reversed) {
+if (loop == null) { loop = true; }
+if (reversed == null) { reversed = false; }
+	var props = new Object();
+	props.mode = mode;
+	props.startPosition = startPosition;
+	props.labels = {};
+	props.loop = loop;
+	props.reversed = reversed;
+	cjs.MovieClip.apply(this,[props]);
+
+	// Button01
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f("#FFCC00").s().p("Emj/BsAMAAAjX/MNH/AAAMAAADX/g");
+	this.shape.setTransform(74.9781,25,0.0279,0.0362);
+
+	this.timeline.addTween(cjs.Tween.get(this.shape).wait(24));
+
+	this._renderFirstFrame();
+
+}).prototype = p = new cjs.MovieClip();
+p.nominalBounds = new cjs.Rectangle(0,0,150,50);
+
+
+(lib.Button01 = function(mode,startPosition,loop,reversed) {
+if (loop == null) { loop = true; }
+if (reversed == null) { reversed = false; }
+	var props = new Object();
+	props.mode = mode;
+	props.startPosition = startPosition;
+	props.labels = {};
+	props.loop = loop;
+	props.reversed = reversed;
+	cjs.MovieClip.apply(this,[props]);
+
+	// Button01
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f("#CC9933").s().p("Emj/BsAMAAAjX/MNH/AAAMAAADX/g");
+	this.shape.setTransform(74.9781,25,0.0279,0.0362);
+
+	this.timeline.addTween(cjs.Tween.get(this.shape).wait(24));
+
+	this._renderFirstFrame();
+
+}).prototype = p = new cjs.MovieClip();
+p.nominalBounds = new cjs.Rectangle(0,0,150,50);
 
 
 // stage content:
@@ -84,8 +132,50 @@ if (reversed == null) { reversed = false; }
 	props.reversed = reversed;
 	cjs.MovieClip.apply(this,[props]);
 
-	// Main
-	this.instance = new lib.Symbol1("synched",0);
+	this.actionFrames = [0];
+	// timeline functions:
+	this.frame_0 = function() {
+		stage.enableMouseOver(30);
+		
+		var _this = this;
+		stage.on('stagemousemove', function (e){
+			var radians = Math.atan2(e.localY - _this.Button02.y, e.localX - _this.Button02.x);
+			var degrees = radians * (180 - Math.PI);
+			_this.Button02.rotation = degrees - 90;
+		});
+		var _this = this;
+		/*
+		Double click on the specified symbol instance executes a function.
+		*/
+		_this.Button00.on('dblclick', function(){
+		
+		/*
+		Rotates the symbol inst,ance by updating its rotation property by the specified number of degrees.
+		To rotate the symbol instance counter clock-wise input a negative number.
+		*/
+		_this.Button00.rotation+=30;
+		});
+	}
+
+	// actions tween:
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(24));
+
+	// Button02
+	this.Button02 = new lib.Button02();
+	this.Button02.name = "Button02";
+	this.Button02.setTransform(117.6,67.25,1,1,0,0,0,75,25);
+
+	this.timeline.addTween(cjs.Tween.get(this.Button02).wait(24));
+
+	// Button00
+	this.Button00 = new lib.Button01();
+	this.Button00.name = "Button00";
+	this.Button00.setTransform(117.6,261.1,1,1,0,0,0,75,25);
+
+	this.timeline.addTween(cjs.Tween.get(this.Button00).wait(24));
+
+	// RoamingShip
+	this.instance = new lib.loaderShip_1("synched",0);
 	this.instance.setTransform(170,420,1,1,0,0,180);
 
 	this.timeline.addTween(cjs.Tween.get(this.instance).to({x:898.5},12).to({skewY:0,x:800},1).to({x:100},10).wait(1));
@@ -93,7 +183,7 @@ if (reversed == null) { reversed = false; }
 	this._renderFirstFrame();
 
 }).prototype = p = new lib.AnMovieClip();
-p.nominalBounds = new cjs.Rectangle(520,717,430,-120);
+p.nominalBounds = new cjs.Rectangle(520,362.3,430,234.7);
 // library properties:
 lib.properties = {
 	id: '303C2E8208D3414CBA2B52E197D5F01E',

@@ -102,7 +102,7 @@ function onButtonClick() {
     buttonText.text = 'Clicked!';
 	buttonText.x = button.x + button.width / 2 - buttonText.width / 2;
 
-	alert("I am an alert box!");
+	//alert("I am an alert box!");
 }
 
 
