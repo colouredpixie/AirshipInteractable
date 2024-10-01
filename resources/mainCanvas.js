@@ -144,15 +144,7 @@ if (reversed == null) { reversed = false; }
 			_this.Button02.rotation = degrees - 90;
 		});
 		var _this = this;
-		/*
-		Double click on the specified symbol instance executes a function.
-		*/
 		_this.Button00.on('dblclick', function(){
-		
-		/*
-		Rotates the symbol inst,ance by updating its rotation property by the specified number of degrees.
-		To rotate the symbol instance counter clock-wise input a negative number.
-		*/
 		_this.Button00.rotation+=30;
 		});
 	}
@@ -193,7 +185,7 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"resources/images/mainCanvas_atlas_1.png", id:"mainCanvas_atlas_1"}
+		{src:"resources/images/mainCanvas_atlas_1.png?1727795150555", id:"mainCanvas_atlas_1"}
 	],
 	preloads: []
 };
