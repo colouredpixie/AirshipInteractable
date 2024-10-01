@@ -61,7 +61,7 @@ if (reversed == null) { reversed = false; }
 	props.reversed = reversed;
 	cjs.MovieClip.apply(this,[props]);
 
-	// Layer_1
+	// ShipRoaming
 	this.instance = new lib.loader();
 	this.instance.setTransform(-50,-23,0.8,0.8);
 
@@ -84,16 +84,16 @@ if (reversed == null) { reversed = false; }
 	props.reversed = reversed;
 	cjs.MovieClip.apply(this,[props]);
 
-	// Layer_1
+	// Main
 	this.instance = new lib.Symbol1("synched",0);
-	this.instance.setTransform(266.3,259.55);
+	this.instance.setTransform(170,420,1,1,0,0,180);
 
-	this.timeline.addTween(cjs.Tween.get(this.instance).to({x:622.85},12).to({x:260.05},11).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance).to({x:898.5},12).to({skewY:0,x:800},1).to({x:100},10).wait(1));
 
 	this._renderFirstFrame();
 
 }).prototype = p = new lib.AnMovieClip();
-p.nominalBounds = new cjs.Rectangle(710.1,556.6,62.799999999999955,-120);
+p.nominalBounds = new cjs.Rectangle(520,717,430,-120);
 // library properties:
 lib.properties = {
 	id: '303C2E8208D3414CBA2B52E197D5F01E',
