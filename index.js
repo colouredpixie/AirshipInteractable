@@ -1,11 +1,9 @@
+// Constants and global styles
 const options = {
 	backgroundColor: 0x5081aa,
 	width: 1000,
 	height: 640,
 }
-const app = new PIXI.Application();
-await app.init(options);
-document.body.appendChild(app.canvas);
 
 const style = new PIXI.TextStyle({
 	fill: "#FFFFFF",
@@ -15,58 +13,61 @@ const style = new PIXI.TextStyle({
 });
 
 //const blurFilter = new PIXI.filters.BlurFilter();
+const app = new PIXI.Application();
+await app.init(options);
+document.body.appendChild(app.canvas);
 
+// Creating game scenes
+// Loader scene
 const loaderScene = new PIXI.Container();
 
-// Create the sprites and add to the stage
+// Creating the loader sprites and adding them to the stage
 await PIXI.Assets.load('resources/loaderCloud.png');
 let spriteBG = PIXI.Sprite.from('resources/loaderCloud.png');
 loaderScene.addChild(spriteBG);
 spriteBG.anchor.x = 0.5;
 spriteBG.anchor.y = 0.5;
 spriteBG.x = app.screen.width / 2;
-spriteBG.y = app.screen.height / 2 - 20;
+spriteBG.y = app.screen.height / 2;
 
 await PIXI.Assets.load('resources/loaderShip.png');
-      let sprite = PIXI.Sprite.from('resources/loaderShip.png');
-      loaderScene.addChild(sprite);
-	  sprite.anchor.x = 0.5;
-	  sprite.anchor.y = 0.5;
-	  sprite.x = app.screen.width / 2;
-	  sprite.y = app.screen.height / 2 - 25;
-// Add a ticker callback to move the sprite back and forth
-      let elapsed = 0.0;
-      app.ticker.add((ticker) => {
-        elapsed += ticker.deltaTime;
-		sprite.width += Math.cos(elapsed/25.0);
-		sprite.height += Math.cos(elapsed/25.0);
+let sprite = PIXI.Sprite.from('resources/loaderShip.png');
+loaderScene.addChild(sprite);
+sprite.anchor.x = 0.5;
+sprite.anchor.y = 0.5;
+sprite.x = app.screen.width / 2;
+let elapsed = 0.0;
+app.ticker.add((ticker) => {
+	elapsed += ticker.deltaTime;
+	sprite.width += Math.cos(elapsed/25.0) / 10;
+	sprite.height += Math.cos(elapsed/25.0) / 10;
+	sprite.y = app.screen.height / 2 + Math.cos(elapsed/25.0) * 5;
 });
 
-
-const startGameButton = new PIXI.Graphics();
-startGameButton.beginFill(0xc46762);
-startGameButton.drawRoundedRect(0, 0, 200, 50, 15);
-startGameButton.endFill();
-startGameButton.x = app.view.width / 2 - startGameButton.width / 2;
-startGameButton.y = app.view.height / 2 - startGameButton.height / 2 + 170;
-loaderScene.addChild(startGameButton);
-
-const startGameText = new PIXI.Text('Start Demo', style);
-startGameText.x = startGameButton.x + startGameButton.width / 2 - startGameText.width / 2;  // Center the text on the button
-startGameText.y = startGameButton.y + startGameButton.height / 2 - startGameText.height / 2;
-startGameText.eventMode = "static";
-startGameText.cursor = "pointer";
-
-startGameText.on("click", () => {
+// Creating Start Demo button
+const startDemoButton = new PIXI.Graphics();
+startDemoButton.beginFill(0xc46762);
+startDemoButton.drawRoundedRect(0, 0, 200, 50, 15);
+startDemoButton.endFill();
+startDemoButton.x = app.view.width / 2 - startDemoButton.width / 2;
+startDemoButton.y = app.view.height / 2 - startDemoButton.height / 2 + 200;
+startDemoButton.eventMode = "static";
+startDemoButton.cursor = "pointer";
+startDemoButton.on("click", () => {
 	app.stage.removeChild(loaderScene);
 	app.stage.addChild(mainScene);
 	init();
 });
+loaderScene.addChild(startDemoButton);
 
-loaderScene.addChild(startGameText);
+const startDemoText = new PIXI.Text('Start Demo', style);
+startDemoText.x = startDemoButton.x + startDemoButton.width / 2 - startDemoText.width / 2;  // Center the text on the button
+startDemoText.y = startDemoButton.y + startDemoButton.height / 2 - startDemoText.height / 2;
+loaderScene.addChild(startDemoText);
 
 app.stage.addChild(loaderScene);
 
+// Main scene
 const mainScene = new PIXI.Container();
 
 // Create a basic button shape using PIXI Graphics
