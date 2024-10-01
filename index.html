@@ -6,7 +6,7 @@
 	<script src="https://pixijs.download/release/pixi.js"></script>
 
     <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
-    <script src="resources/Loader_HTML5 Canvas.js"></script>
+    <script src="resources/mainCanvas.js"></script>
     <script>
     var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
     function init() {
@@ -34,7 +34,7 @@
         for(i=0; i<ssMetadata.length; i++) {
             ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
         }
-        exportRoot = new lib.Loader_HTML5Canvas();
+        exportRoot = new lib.mainCanvas();
         stage = new lib.Stage(canvas);	
         //Registers the "tick" event listener.
         fnStartAnimation = function() {
@@ -50,17 +50,17 @@
     </script>
 
 </head>
-<body style="margin:0px;">
+<body style="margin:0px; background-color:#829bb9;">
     
-    <div id="animation_container" style="pointer-events:none; position: absolute;  left: 0px; top: 0px;">
-		<canvas id="canvas" width="640" height="480" style="position: absolute;  left: 0px; top: 0px; display: inline; "></canvas>
-		<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:640px; height:480px; position: absolute; left: 0px; top: 0px; display: inline;">
+    <div id="animation_container" style="pointer-events:none; position: absolute;  left: 0px; top: 0px; display: inline; width: 1000px; height: 640px">
+		<canvas id="canvas" width="1000" height="640" style="position: absolute; left: 0px; top: 0px; display: inline; "></canvas>
+		<div id="dom_overlay_container" style="pointer-events: none; overflow: hidden; width: 1000px; height: 640px; position: absolute; left: 0px; top: 0px; display: inline;">
 		</div>
 	</div>
     
+    <!-- -->
     <script type="module" src="index.js"></script>
     <script src="assets.js"></script>
-    <!-- -->
 </body>
 </html>
 

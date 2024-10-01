@@ -3,7 +3,7 @@
 var p; // shortcut to reference prototypes
 var lib={};var ss={};var img={};
 lib.ssMetadata = [
-		{name:"Loader_HTML5 Canvas_atlas_1", frames: [[0,0,250,250]]}
+		{name:"mainCanvas_atlas_1", frames: [[0,0,250,250]]}
 ];
 
 
@@ -28,7 +28,7 @@ lib.ssMetadata = [
 
 
 (lib.loader = function() {
-	this.initialize(ss["Loader_HTML5 Canvas_atlas_1"]);
+	this.initialize(ss["mainCanvas_atlas_1"]);
 	this.gotoAndStop(0);
 }).prototype = p = new cjs.Sprite();
 // helper functions:
@@ -73,7 +73,7 @@ if (reversed == null) { reversed = false; }
 
 
 // stage content:
-(lib.Loader_HTML5Canvas = function(mode,startPosition,loop,reversed) {
+(lib.mainCanvas = function(mode,startPosition,loop,reversed) {
 if (loop == null) { loop = true; }
 if (reversed == null) { reversed = false; }
 	var props = new Object();
@@ -88,22 +88,22 @@ if (reversed == null) { reversed = false; }
 	this.instance = new lib.Symbol1("synched",0);
 	this.instance.setTransform(266.3,259.55);
 
-	this.timeline.addTween(cjs.Tween.get(this.instance).to({x:372.6},12).to({x:260.05},11).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance).to({x:622.85},12).to({x:260.05},11).wait(1));
 
 	this._renderFirstFrame();
 
 }).prototype = p = new lib.AnMovieClip();
-p.nominalBounds = new cjs.Rectangle(530.1,476.6,-7.5,-40);
+p.nominalBounds = new cjs.Rectangle(710.1,556.6,62.799999999999955,-120);
 // library properties:
 lib.properties = {
 	id: '303C2E8208D3414CBA2B52E197D5F01E',
-	width: 640,
-	height: 480,
+	width: 1000,
+	height: 640,
 	fps: 24,
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"resources/images/Loader_HTML5 Canvas_atlas_1.png", id:"Loader_HTML5 Canvas_atlas_1"}
+		{src:"resources/images/mainCanvas_atlas_1.png", id:"mainCanvas_atlas_1"}
 	],
 	preloads: []
 };
