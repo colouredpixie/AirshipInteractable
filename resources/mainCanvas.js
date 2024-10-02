@@ -50,6 +50,34 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 	}
 
 
+(lib.Roll = function(mode,startPosition,loop,reversed) {
+if (loop == null) { loop = true; }
+if (reversed == null) { reversed = false; }
+	var props = new Object();
+	props.mode = mode;
+	props.startPosition = startPosition;
+	props.labels = {};
+	props.loop = loop;
+	props.reversed = reversed;
+	cjs.MovieClip.apply(this,[props]);
+
+	// Layer1
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f("#000000").s().p("AhUBVQgjgkAAgxQAAgwAjgkQAjgjAxAAQAyAAAjAjQAjAkAAAwQAAAxgjAkQgjAjgyAAQgxAAgjgjg");
+	this.shape.setTransform(0.05,-20.95);
+
+	this.shape_1 = new cjs.Shape();
+	this.shape_1.graphics.f("#00CC33").s().p("AkYEZQh0h1gBikQABikB0h0QB0h0CkgBQCkABB1B0QB1B0gBCkQABCkh1B1Qh1B1ikgBQikABh0h1gAhRkjQgjAkAAAxQAAAxAjAkQAjAjAxAAQAyAAAjgjQAjgkAAgxQAAgxgjgkQgjgjgyAAQgxAAgjAjg");
+	this.shape_1.setTransform(-0.25,-0.25);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_1},{t:this.shape}]}).wait(24));
+
+	this._renderFirstFrame();
+
+}).prototype = p = new cjs.MovieClip();
+p.nominalBounds = new cjs.Rectangle(-40,-40,79.5,79.5);
+
+
 (lib.loaderShip_1 = function(mode,startPosition,loop,reversed) {
 if (loop == null) { loop = true; }
 if (reversed == null) { reversed = false; }
@@ -72,7 +100,7 @@ if (reversed == null) { reversed = false; }
 }).prototype = getMCSymbolPrototype(lib.loaderShip_1, new cjs.Rectangle(-50,-23,200,200), null);
 
 
-(lib.Button02 = function(mode,startPosition,loop,reversed) {
+(lib.InfoButton = function(mode,startPosition,loop,reversed) {
 if (loop == null) { loop = true; }
 if (reversed == null) { reversed = false; }
 	var props = new Object();
@@ -83,24 +111,27 @@ if (reversed == null) { reversed = false; }
 	props.reversed = reversed;
 	cjs.MovieClip.apply(this,[props]);
 
-	// Button01
-	this.text = new cjs.Text("rotate", "bold 14px 'Verdana'", "#FFFFFF");
+	// Layer_1
+	this.text = new cjs.Text("i", "bold 24px 'Verdana'", "#00FF33");
 	this.text.textAlign = "center";
-	this.text.lineHeight = 19;
-	this.text.lineWidth = 144;
+	this.text.lineHeight = 31;
+	this.text.lineWidth = 12;
 	this.text.parent = this;
-	this.text.setTransform(75,14.05);
+	this.text.setTransform(-0.05,-14.6);
 
 	this.shape = new cjs.Shape();
-	this.shape.graphics.f("#FFCC00").s().p("ArtD6IAAnzIXbAAIAAHzg");
-	this.shape.setTransform(74.975,25);
+	this.shape.graphics.f("#FFFFFF").s().p("AiaCbQg7g7gEhRIgBgLIAAgEIABgIQAChVA9g9QBAhABaAAIAEAAIAEAAQBWADA8A9QA9A9AEBSIAAAEIAAACIAAAFIAAACIAAACIAAAGIAAABQgEBTg9A9QhABAhaAAQhaAAhAhAg");
+	this.shape.setTransform(0.05,0);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape},{t:this.text}]}).wait(24));
+	this.shape_1 = new cjs.Shape();
+	this.shape_1.graphics.f("#00CC33").s().p("Ai1C2QhMhLABhrQgBhqBMhLQBLhMBqABQBrgBBLBMQBMBLgBBqQABBrhMBLQhLBMhrgBQhqABhLhMgAiaiaQg9A9gCBVIgBAIIAAAEIABALQAEBRA7A7QBBBABaAAQBaAABAhAQA9g9AEhTIAAgBIAAgGIAAgCIAAgCIAAgFIAAgCIAAgEQgEhSg9g9Qg9g9hWgDIgEAAIgDAAQhaAAhBBAg");
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_1},{t:this.shape},{t:this.text}]}).wait(1));
 
 	this._renderFirstFrame();
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(0,0,150,50);
+p.nominalBounds = new cjs.Rectangle(-25.7,-25.7,51.5,51.5);
 
 
 (lib.Button01 = function(mode,startPosition,loop,reversed) {
@@ -153,43 +184,58 @@ if (reversed == null) { reversed = false; }
 		
 		var _this = this;
 		stage.on('stagemousemove', function (e){
-			var radians = Math.atan2(e.localY - _this.Button02.y, e.localX - _this.Button02.x);
+			var radians = Math.atan2(e.localY - _this.RollerLeft.y, e.localX - _this.RollerLeft.x);
 			var degrees = radians * (180 - Math.PI);
-			_this.Button02.rotation = degrees - 90;
+			_this.RollerLeft.rotation = degrees - 90;
+			_this.RollerRight.rotation = degrees - 90;
 		});
 		var _this = this;
 		_this.Button00.on('dblclick', function(){
 		_this.Button00.rotation+=30;
+		});
+		-_this.Button01.on('dblclick', function(){
+		_this.Button01.rotation+=30;
 		});
 	}
 
 	// actions tween:
 	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(24));
 
-	// Button02
-	this.Button02 = new lib.Button02();
-	this.Button02.name = "Button02";
-	this.Button02.setTransform(117.6,67.25,1,1,0,0,0,75,25);
+	// Roller
+	this.RollerRight = new lib.Roll();
+	this.RollerRight.name = "RollerRight";
+	this.RollerRight.setTransform(159.6,81.25);
 
-	this.timeline.addTween(cjs.Tween.get(this.Button02).wait(24));
+	this.RollerLeft = new lib.Roll();
+	this.RollerLeft.name = "RollerLeft";
+	this.RollerLeft.setTransform(72.6,81.25);
 
-	// Button00
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.RollerLeft},{t:this.RollerRight}]}).wait(24));
+
+	// StaticButtons
+	this.instance = new lib.InfoButton("synched",0);
+	this.instance.setTransform(897.95,515.95);
+
+	this.Button01 = new lib.Button01();
+	this.Button01.name = "Button01";
+	this.Button01.setTransform(596.65,319.05,1,1,0,0,0,75,25);
+
 	this.Button00 = new lib.Button01();
 	this.Button00.name = "Button00";
-	this.Button00.setTransform(117.6,261.1,1,1,0,0,0,75,25);
+	this.Button00.setTransform(413.45,319.05,1,1,0,0,0,75,25);
 
-	this.timeline.addTween(cjs.Tween.get(this.Button00).wait(24));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.Button00},{t:this.Button01},{t:this.instance}]}).wait(24));
 
 	// RoamingShip
-	this.instance = new lib.loaderShip_1("synched",0);
-	this.instance.setTransform(170,420,1,1,0,0,180);
+	this.instance_1 = new lib.loaderShip_1("synched",0);
+	this.instance_1.setTransform(170,420,1,1,0,0,180);
 
-	this.timeline.addTween(cjs.Tween.get(this.instance).to({x:898.5},12).to({skewY:0,x:800},1).to({x:100},10).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_1).to({x:898.5},12).to({skewY:0,x:800},1).to({x:100},10).wait(1));
 
 	this._renderFirstFrame();
 
 }).prototype = p = new lib.AnMovieClip();
-p.nominalBounds = new cjs.Rectangle(520,362.3,430,234.7);
+p.nominalBounds = new cjs.Rectangle(520,361.3,430,235.7);
 // library properties:
 lib.properties = {
 	id: '303C2E8208D3414CBA2B52E197D5F01E',
