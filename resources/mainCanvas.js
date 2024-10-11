@@ -3,7 +3,7 @@
 var p; // shortcut to reference prototypes
 var lib={};var ss={};var img={};
 lib.ssMetadata = [
-		{name:"mainCanvas_atlas_1", frames: [[1995,0,51,47],[0,832,222,148],[434,642,242,241],[1634,760,243,201],[1726,486,276,272],[1634,696,54,33],[1432,817,151,47],[1432,768,152,47],[1218,642,414,124],[1002,486,722,154],[0,642,432,188],[0,0,1000,640],[1002,0,991,484],[1634,642,52,52],[678,642,253,219],[933,642,283,192],[1879,760,131,89],[1218,768,212,162]]}
+		{name:"mainCanvas_atlas_1", frames: [[1995,0,51,47],[0,832,222,148],[434,642,242,241],[1634,760,243,201],[1726,486,276,272],[224,832,54,33],[1432,817,151,47],[1432,768,152,47],[1218,642,414,124],[1002,486,722,154],[0,642,432,188],[0,0,1000,640],[1002,0,991,484],[1634,642,52,52],[1634,696,52,52],[678,642,253,219],[933,642,283,192],[1879,760,131,89],[1218,768,212,162]]}
 ];
 
 
@@ -125,30 +125,37 @@ lib.ssMetadata = [
 
 
 
-(lib.PuttiLeft = function() {
+(lib.i_hover = function() {
 	this.initialize(ss["mainCanvas_atlas_1"]);
 	this.gotoAndStop(14);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.PuttiRight = function() {
+(lib.PuttiLeft = function() {
 	this.initialize(ss["mainCanvas_atlas_1"]);
 	this.gotoAndStop(15);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.ShipDrifter = function() {
+(lib.PuttiRight = function() {
 	this.initialize(ss["mainCanvas_atlas_1"]);
 	this.gotoAndStop(16);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.ShipWobler = function() {
+(lib.ShipDrifter = function() {
 	this.initialize(ss["mainCanvas_atlas_1"]);
 	this.gotoAndStop(17);
+}).prototype = p = new cjs.Sprite();
+
+
+
+(lib.ShipWobler = function() {
+	this.initialize(ss["mainCanvas_atlas_1"]);
+	this.gotoAndStop(18);
 }).prototype = p = new cjs.Sprite();
 // helper functions:
 
@@ -803,19 +810,42 @@ if (reversed == null) { reversed = false; }
 	var props = new Object();
 	props.mode = mode;
 	props.startPosition = startPosition;
-	props.labels = {};
+	props.labels = {"default":0,hover:1};
 	props.loop = loop;
 	props.reversed = reversed;
 	cjs.MovieClip.apply(this,[props]);
 
+	// timeline functions:
+	this.frame_0 = function() {
+		var _this = this;
+		_this.stop();
+	}
+	this.frame_1 = function() {
+		var _this = this;
+		_this.stop();
+	}
+
+	// actions tween:
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1).call(this.frame_1).wait(1));
+
 	// Layer_1
 	this.instance = new lib.i();
 
-	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
+	this.instance_1 = new lib.i_hover();
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance}]}).to({state:[{t:this.instance},{t:this.instance_1}]},1).wait(1));
+
+	// Layer_3
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f("#5081AA").s().p("AidCeQhChBABhdQgBhcBChBQBBhCBcABQBdgBBBBCQBBBBAABcQAABdhBBBQhBBBhdAAQhcAAhBhBg");
+	this.shape.setTransform(26,26);
+
+	this.timeline.addTween(cjs.Tween.get(this.shape).wait(2));
 
 	this._renderFirstFrame();
 
-}).prototype = getMCSymbolPrototype(lib.InfoButton, new cjs.Rectangle(0,0,52,52), null);
+}).prototype = p = new cjs.MovieClip();
+p.nominalBounds = new cjs.Rectangle(0,0,52,52);
 
 
 (lib.ButtonPopup_1 = function(mode,startPosition,loop,reversed) {
@@ -1181,6 +1211,7 @@ if (reversed == null) { reversed = false; }
 	this.frame_0 = function() {
 		var _this = this;
 		_this.InfoButton.on('click', function(){
+		_this.InfoButton.gotoAndPlay("hover");
 		_this.InfoPopup.play();
 		});
 		
