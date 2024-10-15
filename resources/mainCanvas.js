@@ -3,7 +3,7 @@
 var p; // shortcut to reference prototypes
 var lib={};var ss={};var img={};
 lib.ssMetadata = [
-		{name:"mainCanvas_atlas_1", frames: [[1988,108,51,47],[993,646,860,413],[1298,1462,222,148],[219,1318,242,241],[1579,1430,243,201],[653,1128,276,272],[1988,157,54,33],[1893,1266,151,47],[1893,1315,151,47],[1855,978,152,47],[1893,1217,152,47],[993,1061,303,567],[463,1402,414,124],[1298,1061,719,154],[219,1128,432,188],[0,0,1000,640],[0,642,991,484],[0,1128,217,464],[1988,0,52,52],[1988,54,52,52],[1855,646,191,224],[1002,0,984,644],[1298,1217,279,243],[1579,1217,312,211],[1855,872,154,104],[1824,1430,212,162]]}
+		{name:"mainCanvas_atlas_1", frames: [[1988,108,51,47],[0,642,860,413],[558,1057,222,148],[314,1057,242,241],[1664,1237,243,201],[1386,992,276,272],[1988,157,54,33],[974,1264,151,47],[1127,1268,151,47],[1888,752,152,47],[974,1215,152,47],[862,646,303,567],[558,1215,414,124],[1167,646,719,154],[1386,802,432,188],[0,0,1000,640],[1167,802,217,464],[1988,0,52,52],[1988,54,52,52],[1386,1266,204,224],[1002,0,984,644],[1664,992,279,243],[0,1057,312,211],[1888,646,154,104],[1820,802,212,162]]}
 ];
 
 
@@ -139,72 +139,65 @@ lib.ssMetadata = [
 
 
 
-(lib.FrameDecor = function() {
+(lib.Glow = function() {
 	this.initialize(ss["mainCanvas_atlas_1"]);
 	this.gotoAndStop(16);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.Glow = function() {
+(lib.i = function() {
 	this.initialize(ss["mainCanvas_atlas_1"]);
 	this.gotoAndStop(17);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.i = function() {
+(lib.i_hover = function() {
 	this.initialize(ss["mainCanvas_atlas_1"]);
 	this.gotoAndStop(18);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.i_hover = function() {
+(lib.InfoPopup = function() {
 	this.initialize(ss["mainCanvas_atlas_1"]);
 	this.gotoAndStop(19);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.InfoPopup = function() {
+(lib.PaleGlow = function() {
 	this.initialize(ss["mainCanvas_atlas_1"]);
 	this.gotoAndStop(20);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.PaleGlow = function() {
+(lib.PuttiLeft = function() {
 	this.initialize(ss["mainCanvas_atlas_1"]);
 	this.gotoAndStop(21);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.PuttiLeft = function() {
+(lib.PuttiRight = function() {
 	this.initialize(ss["mainCanvas_atlas_1"]);
 	this.gotoAndStop(22);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.PuttiRight = function() {
+(lib.ShipDrifter = function() {
 	this.initialize(ss["mainCanvas_atlas_1"]);
 	this.gotoAndStop(23);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.ShipDrifter = function() {
-	this.initialize(ss["mainCanvas_atlas_1"]);
-	this.gotoAndStop(24);
-}).prototype = p = new cjs.Sprite();
-
-
-
 (lib.ShipWobler = function() {
 	this.initialize(ss["mainCanvas_atlas_1"]);
-	this.gotoAndStop(25);
+	this.gotoAndStop(24);
 }).prototype = p = new cjs.Sprite();
 // helper functions:
 
@@ -245,7 +238,7 @@ if (reversed == null) { reversed = false; }
 	this._renderFirstFrame();
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(-95.5,-112,191,224);
+p.nominalBounds = new cjs.Rectangle(-95.5,-112,204,224);
 
 
 (lib.Tween59 = function(mode,startPosition,loop,reversed) {
@@ -268,7 +261,7 @@ if (reversed == null) { reversed = false; }
 	this._renderFirstFrame();
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(-95.5,-112,191,224);
+p.nominalBounds = new cjs.Rectangle(-95.5,-112,204,224);
 
 
 (lib.Tween54 = function(mode,startPosition,loop,reversed) {
@@ -1230,7 +1223,7 @@ if (reversed == null) { reversed = false; }
 	this._renderFirstFrame();
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(-96,-112,191,224);
+p.nominalBounds = new cjs.Rectangle(-96,-112,204,224);
 
 
 (lib.InfoButton = function(mode,startPosition,loop,reversed) {
@@ -1733,12 +1726,9 @@ if (reversed == null) { reversed = false; }
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_1},{t:this.instance}]}).wait(79));
 
 	// FrameBG
-	this.instance_2 = new lib.FrameDecor();
-	this.instance_2.setTransform(5,5);
+	this.instance_2 = new lib.Frame();
 
-	this.instance_3 = new lib.Frame();
-
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_3},{t:this.instance_2}]}).wait(79));
+	this.timeline.addTween(cjs.Tween.get(this.instance_2).wait(79));
 
 	// Effect
 	this.Effect = new lib.Effect();
@@ -1777,34 +1767,34 @@ if (reversed == null) { reversed = false; }
 	this.timeline.addTween(cjs.Tween.get(this.Anchored).wait(79));
 
 	// Cloud1
-	this.instance_4 = new lib.Cloud1();
-	this.instance_4.setTransform(1,516);
+	this.instance_3 = new lib.Cloud1();
+	this.instance_3.setTransform(1,516);
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_4).wait(79));
+	this.timeline.addTween(cjs.Tween.get(this.instance_3).wait(79));
 
 	// RoamingShip
-	this.instance_5 = new lib.ShipDrifter_1("synched",0);
-	this.instance_5.setTransform(-147.35,542);
+	this.instance_4 = new lib.ShipDrifter_1("synched",0);
+	this.instance_4.setTransform(-147.35,542);
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_5).to({x:1012.7},78).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_4).to({x:1012.7},78).wait(1));
 
 	// Cloud2
-	this.instance_6 = new lib.Cloud2();
-	this.instance_6.setTransform(268,486);
+	this.instance_5 = new lib.Cloud2();
+	this.instance_5.setTransform(268,486);
+
+	this.timeline.addTween(cjs.Tween.get(this.instance_5).wait(79));
+
+	// WoblingShip
+	this.instance_6 = new lib.ShipWobler_1();
+	this.instance_6.setTransform(337.8,534.65,1,1,0,0,0,106,81);
 
 	this.timeline.addTween(cjs.Tween.get(this.instance_6).wait(79));
 
-	// WoblingShip
-	this.instance_7 = new lib.ShipWobler_1();
-	this.instance_7.setTransform(337.8,534.65,1,1,0,0,0,106,81);
+	// Cloud3
+	this.instance_7 = new lib.Cloud3();
+	this.instance_7.setTransform(224,452);
 
 	this.timeline.addTween(cjs.Tween.get(this.instance_7).wait(79));
-
-	// Cloud3
-	this.instance_8 = new lib.Cloud3();
-	this.instance_8.setTransform(224,452);
-
-	this.timeline.addTween(cjs.Tween.get(this.instance_8).wait(79));
 
 	this._renderFirstFrame();
 
