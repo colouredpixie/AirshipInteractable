@@ -3,7 +3,7 @@
 var p; // shortcut to reference prototypes
 var lib={};var ss={};var img={};
 lib.ssMetadata = [
-		{name:"mainCanvas_atlas_1", frames: [[1988,218,51,47],[0,642,860,413],[1409,1202,222,148],[314,1057,242,241],[558,1057,243,201],[1562,802,276,272],[1988,267,54,33],[1988,0,54,54],[1409,992,151,47],[558,1260,151,47],[1017,1237,152,47],[1171,1237,152,47],[862,646,264,450],[1409,1076,414,124],[1128,646,719,154],[1128,802,432,188],[0,0,1000,640],[1849,646,182,425],[1988,56,52,52],[1988,110,52,52],[1988,164,52,52],[1840,1073,204,224],[1002,0,984,644],[1128,992,279,243],[0,1057,312,211],[1633,1202,154,104],[803,1098,212,162]]}
+		{name:"mainCanvas_atlas_1", frames: [[1988,220,51,47],[0,642,860,413],[1409,1202,222,148],[314,1057,242,241],[558,1057,243,201],[1562,802,276,272],[1988,269,54,33],[1988,0,56,56],[1409,992,151,47],[558,1260,151,47],[1017,1237,152,47],[1171,1237,152,47],[862,646,264,450],[1409,1076,414,124],[1128,646,719,154],[1128,802,432,188],[0,0,1000,640],[1849,646,182,425],[1988,58,52,52],[1988,112,52,52],[1988,166,52,52],[1840,1073,204,224],[1002,0,984,644],[1128,992,279,243],[0,1057,312,211],[1633,1202,154,104],[803,1098,212,162]]}
 ];
 
 
@@ -1018,7 +1018,7 @@ if (reversed == null) { reversed = false; }
 	this._renderFirstFrame();
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(-276,-203.7,552,407.5);
+p.nominalBounds = new cjs.Rectangle(-276,-203.7,558.6,417.7);
 
 
 (lib.Tween62 = function(mode,startPosition,loop,reversed) {
@@ -1047,7 +1047,7 @@ if (reversed == null) { reversed = false; }
 	this._renderFirstFrame();
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(-276,-203.7,552.1,407.5);
+p.nominalBounds = new cjs.Rectangle(-276,-203.7,558.6,417.7);
 
 
 (lib.Tween61 = function(mode,startPosition,loop,reversed) {
@@ -1085,7 +1085,7 @@ if (reversed == null) { reversed = false; }
 	this._renderFirstFrame();
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(-194.7,-234.8,389.5,469.70000000000005);
+p.nominalBounds = new cjs.Rectangle(-194.7,-234.8,392.9,473.1);
 
 
 (lib.Tween58 = function(mode,startPosition,loop,reversed) {
@@ -1123,7 +1123,7 @@ if (reversed == null) { reversed = false; }
 	this._renderFirstFrame();
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(-194.7,-234.8,389.5,469.70000000000005);
+p.nominalBounds = new cjs.Rectangle(-194.7,-234.8,392.9,473.1);
 
 
 (lib.Tween57 = function(mode,startPosition,loop,reversed) {
@@ -1197,7 +1197,7 @@ if (reversed == null) { reversed = false; }
 	this._renderFirstFrame();
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(-334.9,-317.1,669.9,634.3);
+p.nominalBounds = new cjs.Rectangle(-337.1,-317.1,674.2,634.3);
 
 
 (lib.Tween54 = function(mode,startPosition,loop,reversed) {
@@ -1271,7 +1271,7 @@ if (reversed == null) { reversed = false; }
 	this._renderFirstFrame();
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(-334.9,-317.1,669.9,634.2);
+p.nominalBounds = new cjs.Rectangle(-337.1,-317.1,674.2,634.2);
 
 
 (lib.Roll = function(mode,startPosition,loop,reversed) {
@@ -1696,7 +1696,7 @@ if (reversed == null) { reversed = false; }
 	this._renderFirstFrame();
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(-675.7,-180,2410.7,1287.5);
+p.nominalBounds = new cjs.Rectangle(-677.9,-180,2415,1297.7);
 
 
 (lib.ButtonPopup_1 = function(mode,startPosition,loop,reversed) {
@@ -2067,15 +2067,15 @@ if (reversed == null) { reversed = false; }
 	// Roller
 	this.RightRollerLeft = new lib.Roll();
 	this.RightRollerLeft.name = "RightRollerLeft";
-	this.RightRollerLeft.setTransform(749.05,79.95,0.1761,0.1761,0,0,0,-0.3,-0.3);
+	this.RightRollerLeft.setTransform(747.55,81.2,0.1761,0.1761,0,0,0,-0.3,-0.3);
 
 	this.RightRollerRight = new lib.Roll();
 	this.RightRollerRight.name = "RightRollerRight";
-	this.RightRollerRight.setTransform(789.35,74.1,0.1887,0.1887,0,0,0,-0.2,-0.2);
+	this.RightRollerRight.setTransform(789.6,74.6,0.1887,0.1887,0,0,0,-0.2,-0.2);
 
 	this.LeftRollerRight = new lib.Roll();
 	this.LeftRollerRight.name = "LeftRollerRight";
-	this.LeftRollerRight.setTransform(216.8,72.85,0.1762,0.1762,0,0,0,0.3,0.3);
+	this.LeftRollerRight.setTransform(217.4,72.65,0.1762,0.1762,0,0,0,0.3,0.3);
 
 	this.LeftRollerLeft = new lib.Roll();
 	this.LeftRollerLeft.name = "LeftRollerLeft";
@@ -2101,7 +2101,6 @@ if (reversed == null) { reversed = false; }
 	this.Effect = new lib.Effect();
 	this.Effect.name = "Effect";
 	this.Effect.setTransform(665,-316.9,1,1,0,0,0,665,-316.9);
-	this.Effect.compositeOperation = "lighten";
 
 	this.timeline.addTween(cjs.Tween.get(this.Effect).wait(79));
 
@@ -2167,7 +2166,7 @@ if (reversed == null) { reversed = false; }
 	this._renderFirstFrame();
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(-147.3,-120,1882.3,768.3);
+p.nominalBounds = new cjs.Rectangle(-147.3,-120,1884.3999999999999,768.3);
 
 
 // stage content:
@@ -2198,7 +2197,7 @@ if (reversed == null) { reversed = false; }
 	this._renderFirstFrame();
 
 }).prototype = p = new lib.AnMovieClip();
-p.nominalBounds = new cjs.Rectangle(352.7,200,1382.3,448);
+p.nominalBounds = new cjs.Rectangle(352.7,200,1384.3999999999999,448);
 // library properties:
 lib.properties = {
 	id: '303C2E8208D3414CBA2B52E197D5F01E',
