@@ -9,8 +9,8 @@ const style = new PIXI.TextStyle({
 	fill: "#FFFFFF",
 	fontSize: 30,
 	fontStyle: "italic",
-	align: "center"
-	// TODO: add font
+	align: "center",
+	fontFamily: "Times New Roman"
 });
 
 const app = new PIXI.Application();
