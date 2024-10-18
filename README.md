@@ -9,7 +9,6 @@ Assets: drawn in Photoshop, animated in Animate, font from Google Fonts
 Mini-game is made up of two scenes, one written in JavaScript using PixiJS library and the other created in Animate. Both contain different animation types and interactive buttons.<br/>
 Putti are watching you!<br/>
 
-
 ![PlayButton](/resources/images/ButtonPlay.png)
 
 Plays an effect panning through the scene
