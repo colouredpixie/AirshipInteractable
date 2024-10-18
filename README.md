@@ -1,12 +1,18 @@
 # AirshipInteractable
 
-An interactive mini-game with focus on animation.
+### An interactive mini-game with focus on animation.
 Language: JavaScript, TypeScript
 Libraries: PixiJS, HTML5 and whatever Adobe Animate exports animations with
-Assets: drawn in Photoshop, animated in Animate and Spine
+Assets: drawn in Photoshop, animated in Animate, font from Google Fonts
 
-[Here be sketches]
+### Set up
+Mini-game is made up of two scenes, one written in JavaScript using PixiJS library and the other created in Animate. Both contain different animation types and interactive buttons.
 
-[Here be mock up story boards]
+![PlayButton](/resources/images/ButtonPlay.png)
+Plays an effect panning through the scene
 
-[Here be functional buttons etc with description]
+![PopupButton](/resources/images/ButtonPopup.png)
+Plays a pop up animation and presents animated text plaque on screen. Pop up can be closed by clicking on it.
+
+![InfoButton](/resources/images/i.png)
+Shows a simple copyright popup, that can also be closed by clicking on it.

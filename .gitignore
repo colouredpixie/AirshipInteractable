@@ -1,0 +1,3 @@
+*.psd
+*.png
+!mainCanvas_atlas_1.png
