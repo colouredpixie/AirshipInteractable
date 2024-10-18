@@ -9,10 +9,13 @@ Assets: drawn in Photoshop, animated in Animate, font from Google Fonts
 Mini-game is made up of two scenes, one written in JavaScript using PixiJS library and the other created in Animate. Both contain different animation types and interactive buttons.
 
 ![PlayButton](/resources/images/ButtonPlay.png)
+
 Plays an effect panning through the scene
 
 ![PopupButton](/resources/images/ButtonPopup.png)
+
 Plays a pop up animation and presents animated text plaque on screen. Pop up can be closed by clicking on it.
 
 ![InfoButton](/resources/images/i.png)
+
 Shows a simple copyright popup, that can also be closed by clicking on it.
