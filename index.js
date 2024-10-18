@@ -10,7 +10,7 @@ const style = new PIXI.TextStyle({
 	fontSize: 30,
 	fontStyle: "italic",
 	align: "center",
-	fontFamily: "Times New Roman"
+	fontFamily: "\"Cormorant Garamond\", serif"
 });
 
 const app = new PIXI.Application();
