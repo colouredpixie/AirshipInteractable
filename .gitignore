@@ -1,5 +1,6 @@
 *.psd
 *.png
+!MasterFile.psd
 !mainCanvas_atlas_1.png
 !i.png
 !ButtonPlay.png
